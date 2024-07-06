@@ -1,1 +1,3 @@
 hola
+
+corregir imagenes ploxito

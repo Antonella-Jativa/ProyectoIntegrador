@@ -30,7 +30,7 @@ const Game = () => {
             <div className={styles.game_full}>
               <div className={styles.game}>
                 <div className={styles.background_game}>
-                  <img id={styles.character} src="img/animation_happy/happy1.png" alt="" />
+                  <img id={styles.character} src="/img/animation_happy/happy1.png" alt="" />
                 </div>
                 <div className={styles.checklist_options}></div>
               </div>
