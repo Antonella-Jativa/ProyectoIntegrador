@@ -8,7 +8,7 @@ const Game = () => {
         <nav className={styles.navbar}>
           <ul className={styles.left}>
             <li className={styles.Inicio}>
-              <a href="page_game.html">
+              <a href="/login">
                 <img id={styles.logo} src="img/LOGO.png" alt="HarmonyReflect Logo" />
                 HarmonyReflect
               </a>
