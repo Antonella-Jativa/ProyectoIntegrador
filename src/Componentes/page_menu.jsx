@@ -6,7 +6,7 @@ const Menu = () => {
     <div className={menustyles.body}>
     <div className={menustyles.container}>
       <div className={menustyles.logo}>
-        <img id={menustyles.logo_img} src="img/LOGO.png" alt="Logo" />
+        <img id={menustyles.logo_img} src="/img/LOGO.png" alt="Logo" />
       </div>
       <div className={menustyles.introduction}>
         <b className={menustyles.tittle}>¡Bienvenido a HarmonyReflect!</b>

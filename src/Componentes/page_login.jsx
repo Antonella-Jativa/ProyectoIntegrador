@@ -6,7 +6,7 @@ const Login = () => {
     <div className={loginstyle.body}>
     <div className={loginstyle.container}>
       <div className={loginstyle.imagen}>
-        <img id={loginstyle.registra_img} src="img/LOGIN.png" alt="Login" />
+        <img id={loginstyle.registra_img} src="/img/LOGIN.png" alt="Login" />
       </div>
       <div className={loginstyle.space}>
         <div className={loginstyle.form}>

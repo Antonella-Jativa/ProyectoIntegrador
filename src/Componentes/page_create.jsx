@@ -31,7 +31,7 @@ const Create = () => {
           </div>
         </div>
         <div className={styles.imagen}>
-          <img className={styles.registra_img} src="./img/RESGISTRAR.png" alt="Registrar" />
+          <img className={styles.registra_img} src="/img/RESGISTRAR.png" alt="Registrar" />
         </div>
       </div>
     </div>
