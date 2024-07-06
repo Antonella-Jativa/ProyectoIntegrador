@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../styles/page_game.module.css';
 
+
 const Game = () => {
   return (
     <>
@@ -9,7 +10,7 @@ const Game = () => {
           <ul className={styles.left}>
             <li className={styles.Inicio}>
               <a href="/login">
-                <img id={styles.logo} src="img/LOGO.png" alt="HarmonyReflect Logo" />
+                <img id={styles.logo} src="/img/LOGO.png" alt="HarmonyReflect Logo" />
                 HarmonyReflect
               </a>
             </li>
