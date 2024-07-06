@@ -43,7 +43,7 @@ const Game = () => {
                       Aqui eran los tips que iremos poniendo a medida que vayan programando, no se olviden de que este sitio es para poner toda la información. Texto largo por si acaso xd
                     </p>
                   </div>
-                  <img src="img/Water.png" alt="" />
+                  <img src="/img/Water.png" alt="" />
                 </div>
               </div>
             </div>
