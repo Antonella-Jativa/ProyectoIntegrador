@@ -45,7 +45,7 @@ const Login = () => {
         <div className={loginstyle.overlay}>
           <div className={loginstyle.messageBox}>
             <p>{message}</p>
-            <button className={loginstyle.closeButton} onClick={closeMessage}>Cerrar</button>
+            <button className={loginstyle.closeButton} onClick={closeMessage}>Aceptar</button>
           </div>
         </div>
       )}
