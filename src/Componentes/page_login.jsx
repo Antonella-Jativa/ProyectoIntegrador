@@ -1,3 +1,4 @@
+// Login.js
 import React, { useState } from 'react';
 import loginstyle from '../styles/page_login.module.css';
 
@@ -6,6 +7,8 @@ const Login = () => {
     username: '',
     password: ''
   });
+  const [message, setMessage] = useState('');
+  const [showMessage, setShowMessage] = useState(false);
 
   const handleChange = (e) => {
     setCredentials({
@@ -18,20 +21,34 @@ const Login = () => {
     e.preventDefault();
     const { username, password } = credentials;
 
-    // Recupera los usuarios almacenados en localStorage
     const existingUsers = JSON.parse(localStorage.getItem('users')) || {};
 
-    // Verifica las credenciales
     if (existingUsers[username] && existingUsers[username].password === password) {
-      alert('Inicio de sesión exitoso.');
-      window.location.href = '/game'; // Redirige al usuario a la página de juego
+      setMessage('Inicio de sesión exitoso.');
+      setShowMessage(true);
     } else {
-      alert('Nombre de usuario o contraseña incorrectos.');
+      setMessage('Nombre de usuario o contraseña incorrectos.');
+      setShowMessage(true);
+    }
+  };
+
+  const closeMessage = () => {
+    setShowMessage(false);
+    if (message === 'Inicio de sesión exitoso.') {
+      window.location.href = '/game';
     }
   };
 
   return (
     <div className={loginstyle.body}>
+      {showMessage && (
+        <div className={loginstyle.overlay}>
+          <div className={loginstyle.messageBox}>
+            <p>{message}</p>
+            <button className={loginstyle.closeButton} onClick={closeMessage}>Cerrar</button>
+          </div>
+        </div>
+      )}
       <div className={loginstyle.container}>
         <div className={loginstyle.imagen}>
           <img id={loginstyle.registra_img} src="/img/LOGIN.png" alt="Login" />

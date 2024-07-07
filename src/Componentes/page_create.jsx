@@ -1,3 +1,4 @@
+// Create.js
 import React, { useState } from 'react';
 import styles from '../styles/page_create.module.css';
 
@@ -7,6 +8,8 @@ const Create = () => {
     email: '',
     password: ''
   });
+  const [message, setMessage] = useState('');
+  const [showMessage, setShowMessage] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -19,22 +22,36 @@ const Create = () => {
     e.preventDefault();
     const { username, email, password } = formData;
 
-    // Verifica si el usuario ya está registrado
     const existingUsers = JSON.parse(localStorage.getItem('users')) || {};
     if (existingUsers[username]) {
-      alert('El nombre de usuario ya está tomado.');
+      setMessage('El nombre de usuario ya está tomado.');
+      setShowMessage(true);
       return;
     }
 
-    // Almacena el usuario en localStorage
     existingUsers[username] = { email, password };
     localStorage.setItem('users', JSON.stringify(existingUsers));
-    alert('Registro exitoso. Ahora puedes iniciar sesión.');
-    window.location.href = '/login'; // Redirige al usuario al inicio de sesión
+    setMessage('Registro exitoso. Ahora puedes iniciar sesión.');
+    setShowMessage(true);
+  };
+
+  const closeMessage = () => {
+    setShowMessage(false);
+    if (message === 'Registro exitoso. Ahora puedes iniciar sesión.') {
+      window.location.href = '/login';
+    }
   };
 
   return (
     <div className={styles.body}>
+      {showMessage && (
+        <div className={styles.overlay}>
+          <div className={styles.messageBox}>
+            <p>{message}</p>
+            <button className={styles.closeButton} onClick={closeMessage}>Cerrar</button>
+          </div>
+        </div>
+      )}
       <div className={styles.container}>
         <div className={styles.space}>
           <div className={styles.form}>
